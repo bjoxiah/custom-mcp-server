@@ -32,9 +32,6 @@ ENV/
 *.swp
 *.swo
 
-# StackLoop specific
-.stackloop/
-
 # Environment
 .env
 .env.local
@@ -44,3 +41,6 @@ ENV/
 .coverage
 htmlcov/
 *.lock
+
+# project
+*.log
