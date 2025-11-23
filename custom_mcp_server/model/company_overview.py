@@ -1,0 +1,67 @@
+from pydantic import BaseModel, Field
+from datetime import date
+from typing import Optional
+
+class CompanyOverview(BaseModel):
+    symbol: str = Field(..., alias="Symbol", description="Ticker symbol of the company.")
+    asset_type: str = Field(..., alias="AssetType", description="Type of asset, e.g., Common Stock.")
+    name: str = Field(..., alias="Name", description="Full registered name of the company.")
+    description: str = Field(..., alias="Description", description="Detailed business description.")
+    cik: str = Field(..., alias="CIK", description="SEC Central Index Key.")
+    exchange: str = Field(..., alias="Exchange", description="Stock exchange where the asset is listed.")
+    currency: str = Field(..., alias="Currency", description="Currency used for financial reporting.")
+    country: str = Field(..., alias="Country", description="Country where the company is headquartered.")
+    sector: str = Field(..., alias="Sector", description="Sector classification of the company.")
+    industry: str = Field(..., alias="Industry", description="Industry classification of the company.")
+    address: str = Field(..., alias="Address", description="Company headquarters address.")
+    official_site: str = Field(..., alias="OfficialSite", description="Official company website URL.")
+    fiscal_year_end: str = Field(..., alias="FiscalYearEnd", description="Fiscal year end month.")
+    latest_quarter: date = Field(..., alias="LatestQuarter", description="Latest reported financial quarter.")
+
+    market_capitalization: float = Field(..., alias="MarketCapitalization", description="Total market cap in USD.")
+    ebitda: float = Field(..., alias="EBITDA", description="Earnings before interest, taxes, depreciation, and amortization.")
+    pe_ratio: Optional[float] = Field(None, alias="PERatio", description="Price-to-earnings ratio.")
+    peg_ratio: Optional[float] = Field(None, alias="PEGRatio", description="Price/earnings-to-growth ratio.")
+    book_value: Optional[float] = Field(None, alias="BookValue", description="Book value per share.")
+    dividend_per_share: Optional[float] = Field(None, alias="DividendPerShare", description="Dividend paid per share.")
+    dividend_yield: Optional[float] = Field(None, alias="DividendYield", description="Dividend yield percentage.")
+    eps: Optional[float] = Field(None, alias="EPS", description="Earnings per share.")
+    revenue_per_share_ttm: Optional[float] = Field(None, alias="RevenuePerShareTTM", description="Revenue per share (TTM).")
+    profit_margin: Optional[float] = Field(None, alias="ProfitMargin", description="Net profit margin.")
+    operating_margin_ttm: Optional[float] = Field(None, alias="OperatingMarginTTM", description="Operating margin (TTM).")
+    return_on_assets_ttm: Optional[float] = Field(None, alias="ReturnOnAssetsTTM", description="Return on assets (TTM).")
+    return_on_equity_ttm: Optional[float] = Field(None, alias="ReturnOnEquityTTM", description="Return on equity (TTM).")
+    revenue_ttm: Optional[float] = Field(None, alias="RevenueTTM", description="Revenue for the trailing twelve months.")
+    gross_profit_ttm: Optional[float] = Field(None, alias="GrossProfitTTM", description="Gross profit (TTM).")
+    diluted_eps_ttm: Optional[float] = Field(None, alias="DilutedEPSTTM", description="Diluted earnings per share (TTM).")
+
+    quarterly_earnings_growth_yoy: Optional[float] = Field(None, alias="QuarterlyEarningsGrowthYOY", description="Quarterly earnings growth year over year.")
+    quarterly_revenue_growth_yoy: Optional[float] = Field(None, alias="QuarterlyRevenueGrowthYOY", description="Quarterly revenue growth year over year.")
+
+    analyst_target_price: Optional[float] = Field(None, alias="AnalystTargetPrice", description="Analyst average target price.")
+    analyst_rating_strong_buy: Optional[int] = Field(None, alias="AnalystRatingStrongBuy", description="Strong Buy analyst ratings count.")
+    analyst_rating_buy: Optional[int] = Field(None, alias="AnalystRatingBuy", description="Buy analyst ratings count.")
+    analyst_rating_hold: Optional[int] = Field(None, alias="AnalystRatingHold", description="Hold analyst ratings count.")
+    analyst_rating_sell: Optional[int] = Field(None, alias="AnalystRatingSell", description="Sell analyst ratings count.")
+    analyst_rating_strong_sell: Optional[int] = Field(None, alias="AnalystRatingStrongSell", description="Strong Sell analyst ratings count.")
+
+    trailing_pe: Optional[float] = Field(None, alias="TrailingPE", description="Trailing price-to-earnings ratio.")
+    forward_pe: Optional[float] = Field(None, alias="ForwardPE", description="Forward price-to-earnings ratio.")
+    price_to_sales_ratio_ttm: Optional[float] = Field(None, alias="PriceToSalesRatioTTM", description="Price-to-sales ratio (TTM).")
+    price_to_book_ratio: Optional[float] = Field(None, alias="PriceToBookRatio", description="Price-to-book ratio.")
+    ev_to_revenue: Optional[float] = Field(None, alias="EVToRevenue", description="Enterprise value to revenue.")
+    ev_to_ebitda: Optional[float] = Field(None, alias="EVToEBITDA", description="Enterprise value to EBITDA.")
+    beta: Optional[float] = Field(None, alias="Beta", description="Stock volatility relative to the market.")
+
+    week_52_high: Optional[float] = Field(None, alias="52WeekHigh", description="52-week high stock price.")
+    week_52_low: Optional[float] = Field(None, alias="52WeekLow", description="52-week low stock price.")
+    moving_average_50_day: Optional[float] = Field(None, alias="50DayMovingAverage", description="50-day moving average.")
+    moving_average_200_day: Optional[float] = Field(None, alias="200DayMovingAverage", description="200-day moving average.")
+
+    shares_outstanding: Optional[float] = Field(None, alias="SharesOutstanding", description="Total outstanding shares.")
+    shares_float: Optional[float] = Field(None, alias="SharesFloat", description="Public float shares.")
+    percent_insiders: Optional[float] = Field(None, alias="PercentInsiders", description="Insider ownership percentage.")
+    percent_institutions: Optional[float] = Field(None, alias="PercentInstitutions", description="Institutional ownership percentage.")
+
+    dividend_date: Optional[date] = Field(None, alias="DividendDate", description="Dividend payment date.")
+    ex_dividend_date: Optional[date] = Field(None, alias="ExDividendDate", description="Ex-dividend date determining eligibility.")
