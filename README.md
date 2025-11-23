@@ -2,13 +2,19 @@
 
 A Model Context Protocol (MCP) server that provides stock market data tools using the Alpha Vantage API. 
 
+[![YouTube](https://img.shields.io/badge/YouTube-Tutorial-red)](https://youtu.be/PCnnJmC4Fo0)
+
 ## Features
 
 ### Tools
-- **Company Overview** - Fetch detailed fundamental information about any publicly traded company
-- **News Sentiments** - Retrieve market news and sentiment data filtered by tickers or topics
-- **Current Stock Price** - Get real-time global quotes for any stock ticker
-- **Historical Data** - Access monthly historical stock price data for technical analysis
+- **company_overview** 
+  - Fetch detailed fundamental information about any publicly traded company from [company overview endpoint](https://www.alphavantage.co/documentation/#company-overview)
+- **company_sentiment** 
+  - Retrieve market news and sentiment data filtered by tickers or topics from [news and sentiment](https://www.alphavantage.co/documentation/#news-sentiment)
+- **get_stock_price** 
+  - Get real-time global quotes for any stock ticker from [quote endpoint](https://www.alphavantage.co/documentation/#latestprice)
+- **get_monthly_historical_data** 
+  - Access monthly historical stock price data for technical analysis from [time series monthly endpoint](https://www.alphavantage.co/documentation/#monthly)
 
 ## Prerequisites
 
@@ -22,7 +28,7 @@ A Model Context Protocol (MCP) server that provides stock market data tools usin
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone <repo-url>
 cd custom-mcp-server
 ```
 

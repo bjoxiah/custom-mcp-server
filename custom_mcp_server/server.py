@@ -210,4 +210,4 @@ async def get_monthly_historical(ticker: str) -> Union[HistoricalData, Dict[str,
 if __name__ == "__main__":
     import sys
     print("Starting MCP server...", file=sys.stderr)
-    mcp.run(transport="stdio")  # Explicitly use stdio transport
+    mcp.run(transport="stdio") 
